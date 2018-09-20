@@ -1,5 +1,6 @@
 #include "app.h"
 #include <QtDebug>
+#include <SDL2/SDL_opengl.h>
 
 App::App(QObject *parent) : QObject(parent)
 {
@@ -24,6 +25,10 @@ bool App::initAppEnv()
     }
     if(TTF_Init() != 0){
         qDebug() << "TTF_Init Error: " << SDL_GetError() ;
+        return false;
+    }
+    if(Mix_Init(MIX_INIT_MP3) != 0){
+        qDebug() << "Mix_Init Error: " << SDL_GetError() ;
         return false;
     }
 
@@ -95,6 +100,7 @@ SDL_Texture *App::renderImage(const QString &strFilePath, SDL_Renderer * objRend
 
 void App::releaseAppEnv()
 {
+    Mix_Quit();
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();

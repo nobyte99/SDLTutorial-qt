@@ -25,6 +25,16 @@ inline void CleanUp<SDL_Window>(SDL_Window * &objSDL_Window)
     objSDL_Window = nullptr;
 }
 
+template<>
+inline void CleanUp<SDL_mutex>(SDL_mutex * &objSDL_mutex)
+{
+    if(objSDL_mutex == nullptr){
+        return;
+    }
+    SDL_DestroyMutex(objSDL_mutex);
+    objSDL_mutex = nullptr;
+}
+
 
 template<>
 inline void CleanUp<SDL_Texture>(SDL_Texture * &objSDL_Texture)
@@ -65,4 +75,5 @@ inline void CleanUp<TTF_Font>(TTF_Font * &objSDL_Font)
     TTF_CloseFont(objSDL_Font);
     objSDL_Font = nullptr;
 }
+
 #endif // CLEANUP_H

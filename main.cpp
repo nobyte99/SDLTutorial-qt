@@ -76,16 +76,17 @@ private slots:
 void TestQString::testShowImageEvents()
 {
     LoadImageByExtensionWithEvent objLoadImageByExtensionWithEvent;
-    QString strF1("sample.bmp");
-    QString strF2("icon.bmp");
+    QString strF1(QString(strSourcePWD)+QString("/sample.bmp"));
+    QString strF2(QString(strSourcePWD)+QString("/icon.bmp"));
     objLoadImageByExtensionWithEvent.initLoadImageByExtension(strF1, strF2);
     objLoadImageByExtensionWithEvent.execute();
+
 }
 
 void TestQString::testShowImageTTFEvents()
 {
     myShowImageTTF  objMyShowImageTTF;
-    QString strF1("sample.bmp");
+    QString strF1(QString(strSourcePWD)+QString("/sample.bmp"));
     QString strFontPath("C:/Windows/Fonts/STHUPO.TTF");
     SDL_Color mySDLColor={255,255,255,255};
 
@@ -94,6 +95,7 @@ void TestQString::testShowImageTTFEvents()
 
 }
 // 用于构建可执行的测试程序
+
 QTEST_MAIN(TestQString)
 
 #include "main.moc"
