@@ -1,0 +1,30 @@
+第15课 - 计算帧率（使用定时器）
+
+
+第26课 - 可缩放窗口和窗口事件（视频播放）
+http://kelvmiao.info/sdl-tutorial-cn/lessons/lesson26/index.html
+第33课 - 多线程
+第34课 信号量
+第35课 互斥锁和条件变量
+
+
+第27课 - Alpha混合（慢，应该和openGL混用）
+第36课 - 在SDL中使用OpenGL
+
+
+第31课 - 像素操纵和表面翻转（学习怎么获得像素点）
+
+
+第32课 - 独立于帧的运动（做游戏可以用）
+
+http://lazyfoo.net/tutorials/SDL/index.php
+
+Lesson 21
+Sound Effects and Music
+
+Lesson 34
+Audio Recording
+
+Lesson 42
+Texture Streaming
+
